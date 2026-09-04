@@ -1,0 +1,245 @@
+/* 1. Warna Tema Baharu (Modern Cyber & Clean Glow) */
+:root {
+    --primary: #06b6d4;          /* Cyan Neon */
+    --primary-dark: #0891b2;
+    --accent: #10b981;           /* Emerald Green (Nampak Mewah) */
+    --accent-hover: #059669;
+    --bg-dark: #090d16;           /* Deep Midnight Black */
+    --card-bg: rgba(17, 24, 39, 0.75); /* Glassmorphism Lut Sinar */
+    --card-border: rgba(6, 182, 212, 0.15); /* Border Neon Soft */
+    --text-light: #f8fafc;
+    --text-muted: #94a3b8;
+    --danger: #ef4444;
+    --success: #10b981;
+    --shadow-glow: 0 8px 25px -5px rgba(6, 182, 212, 0.25);
+}
+
+/* 2. Reset & Font Modern */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Kesan Cahaya Background Soft */
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 20%);
+}
+
+/* 3. Header Floating dengan Kesan Blur */
+header {
+    background: rgba(9, 13, 22, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--card-border);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-light);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.logo span { 
+    color: var(--primary);
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+}
+
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+nav a:hover, nav a.active {
+    color: var(--primary);
+    text-shadow: 0 0 8px rgba(6, 182, 212, 0.4);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    flex: 1;
+}
+
+/* 4. Banner Hero Gradient Cyber */
+.hero {
+    background: linear-gradient(135deg, #0e7490, #042f2e);
+    border: 1px solid rgba(6, 182, 212, 0.3);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow-glow);
+}
+
+.hero h1 { 
+    font-size: 2.5rem; 
+    margin-bottom: 0.5rem; 
+    font-weight: 800;
+}
+
+.hero p { opacity: 0.9; font-size: 1.1rem; }
+
+/* 5. Grid & Kad Produk Modern Pro */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 1.8rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 1.2rem;
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary);
+    box-shadow: 0 12px 30px rgba(6, 182, 212, 0.25);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 0.8rem;
+}
+
+.card h3 { font-size: 1.1rem; margin-bottom: 0.4rem; font-weight: 700; }
+.card .category { font-size: 0.75rem; color: var(--primary); text-transform: uppercase; font-weight: 700; }
+.card .price { font-size: 1.3rem; font-weight: 800; color: var(--accent); margin: 0.5rem 0; }
+
+.badge-soldout {
+    background: rgba(239, 68, 68, 0.2);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: inline-block;
+    width: fit-content;
+}
+
+/* 6. Butang Neon Pro (Glowing Button) */
+.btn {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    border: none;
+    padding: 0.75rem 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
+    display: inline-block;
+}
+
+.btn:hover { 
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(6, 182, 212, 0.5);
+    background: linear-gradient(135deg, #22d3ee, var(--primary));
+}
+
+.btn-disabled { 
+    background: #1e293b !important; 
+    color: #64748b !important;
+    box-shadow: none !important;
+    cursor: not-allowed; 
+}
+
+/* 7. Form Container (Moden Box) */
+.form-box {
+    background: var(--card-bg);
+    max-width: 450px;
+    margin: 2rem auto;
+    padding: 2.2rem;
+    border-radius: 20px;
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-glow);
+}
+
+.form-group { margin-bottom: 1.2rem; }
+.form-group label { display: block; margin-bottom: 0.4rem; color: var(--text-muted); font-weight: 600; }
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(9, 13, 22, 0.8);
+    border: 1px solid var(--card-border);
+    color: white;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
+}
+
+/* 8. Jadual Berkotak Mewah (Modern Table) */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 1rem;
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(10px);
+}
+
+th, td {
+    padding: 1.1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+th { 
+    background: rgba(6, 182, 212, 0.1); 
+    color: var(--primary);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+tr:last-child td { border-bottom: none; }
